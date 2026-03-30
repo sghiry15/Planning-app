@@ -767,6 +767,17 @@
       make(4, '10:00', '11:00', 'Mise à jour Salesforce', 'work'),
       make(4, '15:00', '16:00', 'Sport & détente', 'perso'),
     ];
+
+    // Ajout réunion fixe
+    events.push({
+      id: crypto.randomUUID(),
+      title: 'Réunion avec Ajariinvest',
+      date: '2026-03-31',
+      start: '11:00',
+      end: '12:00',
+      category: 'meeting',
+      notes: 'Réunion avec Ajariinvest'
+    });
   }
 
   // ── UTILS ──
