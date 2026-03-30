@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0073)https://planningsghiry-ctfzeqhng3g7g6gk.northeurope-01.azurewebsites.net/ -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Planify — Votre Planning</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link href="./Planify — Votre Planning_files/css2" rel="stylesheet">
 <style>
   :root {
     --bg: #0f0f12;
@@ -609,8 +609,8 @@
     <div class="logo">Planify</div>
     <div class="header-actions">
       <div class="view-toggle">
-        <button class="btn-ghost active" onclick="setView('week')">Semaine</button>
-        <button class="btn-ghost" onclick="setView('month')">Mois</button>
+        <button class="btn-ghost active" onclick="setView(&#39;week&#39;)">Semaine</button>
+        <button class="btn-ghost" onclick="setView(&#39;month&#39;)">Mois</button>
       </div>
       <button class="btn btn-primary" onclick="openModal()">+ Nouveau</button>
     </div>
@@ -619,17 +619,24 @@
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="sidebar-section">
-      <div class="mini-cal" id="miniCal"></div>
+      <div class="mini-cal" id="miniCal"><div class="mini-cal-header">
+      <span>Mars 2026</span>
+      <div class="mini-cal-nav">
+        <button onclick="currentDate.setMonth(currentDate.getMonth()-1);render()">‹</button>
+        <button onclick="currentDate.setMonth(currentDate.getMonth()+1);render()">›</button>
+      </div>
+    </div>
+    <div class="mini-cal-grid"><div class="day-label">L</div><div class="day-label">M</div><div class="day-label">M</div><div class="day-label">J</div><div class="day-label">V</div><div class="day-label">S</div><div class="day-label">D</div><div class="day other-month ">23</div><div class="day other-month ">24</div><div class="day other-month ">25</div><div class="day other-month ">26</div><div class="day other-month ">27</div><div class="day other-month ">28</div><div class="day  ">1</div><div class="day  ">2</div><div class="day  ">3</div><div class="day  ">4</div><div class="day  ">5</div><div class="day  ">6</div><div class="day  ">7</div><div class="day  ">8</div><div class="day  ">9</div><div class="day  ">10</div><div class="day  ">11</div><div class="day  ">12</div><div class="day  ">13</div><div class="day  ">14</div><div class="day  ">15</div><div class="day  ">16</div><div class="day  ">17</div><div class="day  ">18</div><div class="day  ">19</div><div class="day  ">20</div><div class="day  ">21</div><div class="day  ">22</div><div class="day  ">23</div><div class="day  ">24</div><div class="day  ">25</div><div class="day  ">26</div><div class="day  ">27</div><div class="day  ">28</div><div class="day  ">29</div><div class="day  ">30</div><div class="day  today">31</div><div class="day other-month ">1</div><div class="day other-month ">2</div><div class="day other-month ">3</div><div class="day other-month ">4</div><div class="day other-month ">5</div></div></div>
     </div>
 
     <div class="sidebar-section">
       <h3>Catégories</h3>
       <div class="category-list">
-        <div class="category-item"><span class="category-dot" style="background:var(--accent)"></span> Travail <span class="category-count" id="count-work">0</span></div>
-        <div class="category-item"><span class="category-dot" style="background:var(--green)"></span> Personnel <span class="category-count" id="count-perso">0</span></div>
-        <div class="category-item"><span class="category-dot" style="background:var(--orange)"></span> Réunion <span class="category-count" id="count-meeting">0</span></div>
-        <div class="category-item"><span class="category-dot" style="background:var(--rose)"></span> Urgent <span class="category-count" id="count-urgent">0</span></div>
-        <div class="category-item"><span class="category-dot" style="background:var(--sky)"></span> Formation <span class="category-count" id="count-learning">0</span></div>
+        <div class="category-item"><span class="category-dot" style="background:var(--accent)"></span> Travail <span class="category-count" id="count-work">5</span></div>
+        <div class="category-item"><span class="category-dot" style="background:var(--green)"></span> Personnel <span class="category-count" id="count-perso">2</span></div>
+        <div class="category-item"><span class="category-dot" style="background:var(--orange)"></span> Réunion <span class="category-count" id="count-meeting">3</span></div>
+        <div class="category-item"><span class="category-dot" style="background:var(--rose)"></span> Urgent <span class="category-count" id="count-urgent">1</span></div>
+        <div class="category-item"><span class="category-dot" style="background:var(--sky)"></span> Formation <span class="category-count" id="count-learning">1</span></div>
       </div>
     </div>
 
@@ -637,19 +644,19 @@
       <h3>Statistiques</h3>
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-value" id="stat-total">0</div>
+          <div class="stat-value" id="stat-total">12</div>
           <div class="stat-label">Total</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value" style="color:var(--green)" id="stat-today">0</div>
+          <div class="stat-value" style="color:var(--green)" id="stat-today">2</div>
           <div class="stat-label">Aujourd'hui</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value" style="color:var(--accent)" id="stat-week">0</div>
+          <div class="stat-value" style="color:var(--accent)" id="stat-week">10</div>
           <div class="stat-label">Cette semaine</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value" style="color:var(--orange)" id="stat-upcoming">0</div>
+          <div class="stat-value" style="color:var(--orange)" id="stat-upcoming">10</div>
           <div class="stat-label">À venir</div>
         </div>
       </div>
@@ -659,7 +666,7 @@
   <!-- MAIN CONTENT -->
   <main class="main">
     <div class="main-header">
-      <h1 id="mainTitle"></h1>
+      <h1 id="mainTitle">30 Mar — 5 <span>Avr</span> 2026</h1>
       <div class="date-nav">
         <button onclick="navigateDate(-1)">‹</button>
         <button class="today-btn" onclick="goToday()">Aujourd'hui</button>
@@ -667,7 +674,64 @@
       </div>
     </div>
 
-    <div class="week-grid" id="weekGrid"></div>
+    <div class="week-grid" id="weekGrid" style="display: grid;"><div class="week-header-cell"></div><div class="week-header-cell is-today">
+        <div class="day-name">Lun</div>
+        <div class="day-num">30</div>
+      </div><div class="week-header-cell ">
+        <div class="day-name">Mar</div>
+        <div class="day-num">31</div>
+      </div><div class="week-header-cell ">
+        <div class="day-name">Mer</div>
+        <div class="day-num">1</div>
+      </div><div class="week-header-cell ">
+        <div class="day-name">Jeu</div>
+        <div class="day-num">2</div>
+      </div><div class="week-header-cell ">
+        <div class="day-name">Ven</div>
+        <div class="day-num">3</div>
+      </div><div class="week-header-cell ">
+        <div class="day-name">Sam</div>
+        <div class="day-num">4</div>
+      </div><div class="week-header-cell ">
+        <div class="day-name">undefined</div>
+        <div class="day-num">5</div>
+      </div><div class="time-col"><div class="time-slot">07:00</div><div class="time-slot">08:00</div><div class="time-slot">09:00</div><div class="time-slot">10:00</div><div class="time-slot">11:00</div><div class="time-slot">12:00</div><div class="time-slot">13:00</div><div class="time-slot">14:00</div><div class="time-slot">15:00</div><div class="time-slot">16:00</div><div class="time-slot">17:00</div><div class="time-slot">18:00</div><div class="time-slot">19:00</div></div><div class="day-col" data-date="2026-03-30"><div class="hour-line" onclick="openModalAt(&#39;2026-03-30&#39;,&#39;07:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-30&#39;,&#39;08:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-30&#39;,&#39;09:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-30&#39;,&#39;10:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-30&#39;,&#39;11:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-30&#39;,&#39;12:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-30&#39;,&#39;13:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-30&#39;,&#39;14:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-30&#39;,&#39;15:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-30&#39;,&#39;16:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-30&#39;,&#39;17:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-30&#39;,&#39;18:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-30&#39;,&#39;19:00&#39;)"></div><div class="event cat-meeting" style="top:120px;height:90px" onclick="editEvent(&#39;e7edf43d-4f40-4294-a11c-b66949e6bb59&#39;)">
+          <div>Stand-up &amp; Sprint Review</div>
+          <div class="event-time">09:00 — 10:30</div>
+        </div><div class="event cat-work" style="top:420px;height:60px" onclick="editEvent(&#39;8e47852b-b598-4b94-b0bc-07d7bc503f94&#39;)">
+          <div>Déploiement Azure</div>
+          <div class="event-time">14:00 — 15:00</div>
+        </div><div class="now-line" style="top:535px"></div></div><div class="day-col" data-date="2026-03-31"><div class="hour-line" onclick="openModalAt(&#39;2026-03-31&#39;,&#39;07:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-31&#39;,&#39;08:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-31&#39;,&#39;09:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-31&#39;,&#39;10:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-31&#39;,&#39;11:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-31&#39;,&#39;12:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-31&#39;,&#39;13:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-31&#39;,&#39;14:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-31&#39;,&#39;15:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-31&#39;,&#39;16:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-31&#39;,&#39;17:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-31&#39;,&#39;18:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-03-31&#39;,&#39;19:00&#39;)"></div><div class="event cat-learning" style="top:180px;height:90px" onclick="editEvent(&#39;ca4f401b-4478-43bd-9bee-3c0880ec3fe7&#39;)">
+          <div>Formation Kubernetes</div>
+          <div class="event-time">10:00 — 11:30</div>
+        </div><div class="event cat-work" style="top:420px;height:90px" onclick="editEvent(&#39;f2b7952d-0862-41cb-b557-9ffdad85ba03&#39;)">
+          <div>Config SSL Certificats</div>
+          <div class="event-time">14:00 — 15:30</div>
+        </div><div class="event cat-meeting" style="top:240px;height:60px" onclick="editEvent(&#39;6b40145f-8c16-4e1e-a20b-b29e962979c1&#39;)">
+          <div>Réunion avec Ajariinvest</div>
+          <div class="event-time">11:00 — 12:00</div>
+        </div></div><div class="day-col" data-date="2026-04-01"><div class="hour-line" onclick="openModalAt(&#39;2026-04-01&#39;,&#39;07:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-01&#39;,&#39;08:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-01&#39;,&#39;09:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-01&#39;,&#39;10:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-01&#39;,&#39;11:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-01&#39;,&#39;12:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-01&#39;,&#39;13:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-01&#39;,&#39;14:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-01&#39;,&#39;15:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-01&#39;,&#39;16:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-01&#39;,&#39;17:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-01&#39;,&#39;18:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-01&#39;,&#39;19:00&#39;)"></div><div class="event cat-urgent" style="top:120px;height:60px" onclick="editEvent(&#39;98e9c7f0-339c-4a79-a324-41f9a886d44f&#39;)">
+          <div>Revue DMARC/SPF</div>
+          <div class="event-time">09:00 — 10:00</div>
+        </div><div class="event cat-perso" style="top:240px;height:60px" onclick="editEvent(&#39;4df0e584-beee-43a3-8139-1b3e5bebb06e&#39;)">
+          <div>Pause déjeuner équipe</div>
+          <div class="event-time">11:00 — 12:00</div>
+        </div></div><div class="day-col" data-date="2026-04-02"><div class="hour-line" onclick="openModalAt(&#39;2026-04-02&#39;,&#39;07:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-02&#39;,&#39;08:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-02&#39;,&#39;09:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-02&#39;,&#39;10:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-02&#39;,&#39;11:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-02&#39;,&#39;12:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-02&#39;,&#39;13:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-02&#39;,&#39;14:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-02&#39;,&#39;15:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-02&#39;,&#39;16:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-02&#39;,&#39;17:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-02&#39;,&#39;18:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-02&#39;,&#39;19:00&#39;)"></div><div class="event cat-work" style="top:90px;height:60px" onclick="editEvent(&#39;8c9c8f09-ead7-4265-ace6-c4c7dc367ce9&#39;)">
+          <div>Backup infrastructure</div>
+          <div class="event-time">08:30 — 09:30</div>
+        </div><div class="event cat-meeting" style="top:360px;height:90px" onclick="editEvent(&#39;983d21b3-f50e-45db-8b52-8afe30c06907&#39;)">
+          <div>Réunion sécurité</div>
+          <div class="event-time">13:00 — 14:30</div>
+        </div></div><div class="day-col" data-date="2026-04-03"><div class="hour-line" onclick="openModalAt(&#39;2026-04-03&#39;,&#39;07:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-03&#39;,&#39;08:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-03&#39;,&#39;09:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-03&#39;,&#39;10:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-03&#39;,&#39;11:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-03&#39;,&#39;12:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-03&#39;,&#39;13:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-03&#39;,&#39;14:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-03&#39;,&#39;15:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-03&#39;,&#39;16:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-03&#39;,&#39;17:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-03&#39;,&#39;18:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-03&#39;,&#39;19:00&#39;)"></div><div class="event cat-work" style="top:180px;height:60px" onclick="editEvent(&#39;a578b7d2-0d33-41a4-87bf-daaab588d60d&#39;)">
+          <div>Mise à jour Salesforce</div>
+          <div class="event-time">10:00 — 11:00</div>
+        </div><div class="event cat-perso" style="top:480px;height:60px" onclick="editEvent(&#39;36286e85-fb5d-4408-b2cf-a08a0c6f3669&#39;)">
+          <div>Sport &amp; détente</div>
+          <div class="event-time">15:00 — 16:00</div>
+        </div><div class="event cat-work" style="top:240px;height:60px" onclick="editEvent(&#39;854954b2-2105-41f8-a549-c7a459e4e444&#39;)">
+          <div>test</div>
+          <div class="event-time">11:00 — 12:00</div>
+        </div></div><div class="day-col" data-date="2026-04-04"><div class="hour-line" onclick="openModalAt(&#39;2026-04-04&#39;,&#39;07:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-04&#39;,&#39;08:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-04&#39;,&#39;09:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-04&#39;,&#39;10:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-04&#39;,&#39;11:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-04&#39;,&#39;12:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-04&#39;,&#39;13:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-04&#39;,&#39;14:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-04&#39;,&#39;15:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-04&#39;,&#39;16:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-04&#39;,&#39;17:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-04&#39;,&#39;18:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-04&#39;,&#39;19:00&#39;)"></div></div><div class="day-col" data-date="2026-04-05"><div class="hour-line" onclick="openModalAt(&#39;2026-04-05&#39;,&#39;07:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-05&#39;,&#39;08:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-05&#39;,&#39;09:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-05&#39;,&#39;10:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-05&#39;,&#39;11:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-05&#39;,&#39;12:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-05&#39;,&#39;13:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-05&#39;,&#39;14:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-05&#39;,&#39;15:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-05&#39;,&#39;16:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-05&#39;,&#39;17:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-05&#39;,&#39;18:00&#39;)"></div><div class="hour-line" onclick="openModalAt(&#39;2026-04-05&#39;,&#39;19:00&#39;)"></div></div></div>
     <div class="month-grid" id="monthGrid"></div>
   </main>
 </div>
@@ -682,7 +746,7 @@
     <div class="modal-body">
       <div class="form-group">
         <label>Titre</label>
-        <input type="text" id="eventTitle" placeholder="Ex: Réunion d'équipe">
+        <input type="text" id="eventTitle" placeholder="Ex: Réunion d&#39;équipe">
       </div>
       <div class="form-row">
         <div class="form-group">
@@ -716,7 +780,7 @@
       </div>
     </div>
     <div class="modal-footer">
-      <button class="btn btn-delete" id="btnDelete" style="display:none" onclick="deleteEvent()">Supprimer</button>
+      <button class="btn btn-delete" id="btnDelete" style="display: none;" onclick="deleteEvent()">Supprimer</button>
       <button class="btn btn-ghost" onclick="closeModal()">Annuler</button>
       <button class="btn btn-primary" onclick="saveEvent()">Enregistrer</button>
     </div>
@@ -1108,5 +1172,6 @@
   // Update now-line every minute
   setInterval(() => { if (currentView === 'week') renderWeek(); }, 60000);
 </script>
-</body>
-</html>
+
+
+</body></html>
